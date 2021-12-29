@@ -1,3 +1,6 @@
+![2021-12-29 17_03_46-docker-compose yml - Visual Studio Code](https://user-images.githubusercontent.com/55690923/147681351-13c3d22c-cb3e-4a69-9cdc-d88cf470b659.png)
+
+
 ## Useful commands:
 ```
 docker run

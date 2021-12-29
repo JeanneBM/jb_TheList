@@ -17,7 +17,6 @@ services:
 
 #ensure the directory ~/jenkins exists
 
-services:
   tomcat:
     image: docker.io/bitnami/tomcat:9.0
     privileged: true
@@ -31,13 +30,9 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
     networks:
       - docker_network
-    volumes:
-        tomcat_data:
-                driver: local
     networks:
       - docker_network
 
-services:
   postgresql:
     image: docker.io/bitnami/postgresql:13
     privileged: true
@@ -66,10 +61,13 @@ services:
       - SONARQUBE_DATABASE_NAME=bitnami_sonarqube
 
 volumes:
-     postgresql_data:
-                 driver: local
-     sonarqube_data:
-                 driver: local
+  tomcat_data:
+                driver: local
+  postgresql_data:
+                driver: local
+  sonarqube_data:
+                driver: local
+               
 
 
 networks:

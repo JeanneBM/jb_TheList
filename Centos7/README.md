@@ -46,10 +46,6 @@ fdisk /dev/sda
 sudo yum install -y yum-utils; sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo; sudo yum install -y docker-ce docker-ce-cli containerd.io; yum list docker-ce --showduplicates | sort -r; sudo yum install -y docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> containerd.io; sudo systemctl start docker; sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose; sudo chmod +x /usr/local/bin/docker-compose; 
 docker version; docker-compose --version
 sudo groupadd docker; sudo usermod -aG docker $USER; sudo reboot ; [after reboot] sudo systemctl start docker; sudo systemctl status docker
-
-![2021-12-29 17_03_46-docker-compose yml - Visual Studio Code](https://user-images.githubusercontent.com/55690923/147681266-ae3687b7-324a-49e2-bcd6-4f403d3fb494.png)
-
-
 ```
 ## Jenkins:
 ```

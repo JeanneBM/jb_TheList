@@ -75,5 +75,3 @@ networks:
         driver: bridge
 
 
-[vagrant@JeanneBM ~]$
-

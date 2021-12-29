@@ -41,7 +41,7 @@ https://www.itzgeek.com/how-tos/linux/centos-how-tos/how-to-configure-static-ip-
 lsblk; df -h
 fdisk /dev/sda 
 ```
-## Docker CE on CentOS:
+## Docker CE + Docker Compose:
 ```
 sudo yum install -y yum-utils; sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo; sudo yum install -y docker-ce docker-ce-cli containerd.io; yum list docker-ce --showduplicates | sort -r; sudo yum install -y docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> containerd.io; sudo systemctl start docker; sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose; sudo chmod +x /usr/local/bin/docker-compose; 
 docker version; docker-compose --version
@@ -56,7 +56,7 @@ sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/
 
 ## Git
 ```
-git add .; git commit -m "Final"; git remote add origin https:// ... .git
+git init; git add .; git commit -m "Final"; git remote add origin https:// ... .git
 git push -u origin master
 
 vim Dockerfile

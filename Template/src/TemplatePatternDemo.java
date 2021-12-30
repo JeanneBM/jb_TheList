@@ -1,5 +1,3 @@
-package test;
-
 import MessagingTemplateMethods.SpanishWelcomeTemplateMethod;
 import MessagingTemplateMethods.AbstractMessagingTemplateMethod;
 import MessagingTemplateMethods.DeutschWelcomeTemplateMethod;

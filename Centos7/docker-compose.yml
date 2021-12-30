@@ -34,8 +34,6 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
     networks:
       - docker_network
-    networks:
-      - docker_network
 
 #################################################################
 
@@ -58,6 +56,7 @@ services:
     user: root
     ports:
       - 80:9000
+    container_name: sonarqube
     volumes:
       - sonarqube_data:/bitnami/sonarqube
     depends_on:
@@ -68,8 +67,70 @@ services:
       - SONARQUBE_DATABASE_PORT_NUMBER=5432
       - SONARQUBE_DATABASE_USER=bn_sonarqube
       - SONARQUBE_DATABASE_NAME=bitnami_sonarqube
+    networks:
+      - docker_network
+
+#################################################################
+
+  nexus:
+    image: sonatype/nexus3
+    privileged: true
+    user: root
+    container_name: nexus
+    volumes:
+      - "nexus-data:/nexus-data"
+    ports:
+      - "8081:8081"
+    networks:
+      - docker_network
       
 #################################################################
+  
+  chrome:
+    image: selenium/node-chrome:4.1.1-20211217
+    privileged: true
+    user: root
+    container_name: selenium_node_chrom
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    networks:
+      - docker_network
+
+  firefox:
+    image: selenium/node-firefox:4.1.1-20211217
+    privileged: true
+    user: root
+    container_name: selenium_node_firefox
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    networks:
+      - docker_network
+
+  selenium-hub:
+    image: selenium/hub:4.1.1-20211217
+    privileged: true
+    user: root
+    container_name: selenium-hub
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"
+    networks:
+      - docker_network
+      
+#################################################################
+
+
 
 volumes:
   tomcat_data:
@@ -78,6 +139,7 @@ volumes:
                 driver: local
   sonarqube_data:
                 driver: local
+  nexus-data: {}
                
 networks:
     docker_network:

@@ -32,7 +32,7 @@ vagrant ssh-config >> C:/Users/ ... /.ssh/config
 
 # /usr/bin/ssh init@127.0.0.1 -p 2222
 
-sudo yum upgrade; sudo yum install -y vim; sudo yum install -y net-tools; sudo yum install -y wget; ssh-keygen; yum install -y git; yum install -y maven; 
+sudo yum upgrade; sudo yum install -y vim; sudo yum install -y net-tools; sudo yum install -y wget; ssh-keygen; sudo yum install -y git; sudo yum install -y maven; 
 ```
 
 ## Static IP

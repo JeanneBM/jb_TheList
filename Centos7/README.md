@@ -14,6 +14,8 @@ docker images
 docker container ls
 docker volume ls
 docker inspect //containerID// | grep IPAddress
+docker exec -it contID bash
+
 
 sudo docker-compose up -d
 whereis git

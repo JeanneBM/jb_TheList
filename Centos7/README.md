@@ -14,6 +14,7 @@ docker images
 docker container ls
 docker volume ls
 docker inspect //containerID// | grep IPAddress
+docker inspect <containerNameOrId> | grep '"IPAddress"' | head -n 1
 docker exec -it contID bash
 
 

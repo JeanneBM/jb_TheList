@@ -3,6 +3,8 @@
 
 ## Useful commands:
 ```
+ifconfig // dla Win ipconfig 
+
 docker run
 docker stop; docker rm
 docker build
@@ -11,6 +13,7 @@ docker ps
 docker images
 docker container ls
 docker volume ls
+docker inspect //containerID// | grep IPAddress
 
 sudo docker-compose up -d
 whereis git

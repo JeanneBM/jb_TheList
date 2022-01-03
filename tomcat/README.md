@@ -15,7 +15,6 @@ https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/
 
 jar -xvf sample.war >> webapps
 
-
+```
 ![2022-01-03 18_58_05-Sample _Hello, World_ Application](https://user-images.githubusercontent.com/55690923/147964005-e81a7fa0-48e0-4326-a9df-0b382df28fc5.png)
 
-```

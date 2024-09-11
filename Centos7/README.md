@@ -76,6 +76,11 @@ By using git clone --depth 1 repo , only the most recent commit on the default b
 
 bfg --delete-files file_I_should_not_have_committed
 bfg --replace-text passwords.txt
+
+GitHub tag
+gh release create tag
+gh release create v1.2.1 --title
+
 ```
 
 ## Docker_env

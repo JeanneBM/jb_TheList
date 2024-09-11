@@ -73,6 +73,9 @@ docker build -t git .
 
 git clone --depth [depth] [clone-url]
 By using git clone --depth 1 repo , only the most recent commit on the default branch (main) is retrieved.
+
+bfg --delete-files file_I_should_not_have_committed
+bfg --replace-text passwords.txt
 ```
 
 ## Docker_env

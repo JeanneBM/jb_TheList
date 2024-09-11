@@ -70,6 +70,9 @@ git push -u origin master
 
 vim Dockerfile
 docker build -t git .
+
+git clone --depth [depth] [clone-url]
+By using git clone --depth 1 repo , only the most recent commit on the default branch (main) is retrieved.
 ```
 
 ## Docker_env
